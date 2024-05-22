@@ -1,0 +1,59 @@
+// Initialize the Cart and Total Price
+initialize cart as empty array
+initialize totalPrice as 0
+
+// Function to Add a Product to the Cart
+function addToCart(product):
+    // Check if the product is already in the cart
+    for each item in cart:
+        if item.id == product.id:
+            // Increment the quantity and update the price
+            item.quantity += 1
+            item.price += product.price
+            updateTotalPrice()
+            return
+    // If the product is not in the cart, add it with quantity = 1
+    product.quantity = 1
+    cart.append(product)
+    updateTotalPrice()
+
+// Function to Remove a Product from the Cart
+function removeFromCart(productId):
+    for each item in cart:
+        if item.id == productId:
+            cart.remove(item)
+            updateTotalPrice()
+            return
+
+// Function to Update the Total Price of the Cart
+function updateTotalPrice():
+    set totalPrice to 0
+    for each item in cart:
+        totalPrice += item.price
+
+// Function to Calculate the Average Price of Products in the Cart
+function calculateAveragePrice():
+    if cart.length == 0:
+        return 0
+    return totalPrice / cart.length
+
+// Function to Filter Products Below a Certain Price
+function filterProducts(priceLimit):
+    filteredProducts = []
+    for each product in cart:
+        if product.price <= priceLimit:
+            filteredProducts.append(product)
+    return filteredProducts
+
+// Function to Sort Products in the Cart by Price
+function sortCart(order):
+    if order == "ascending":
+        sort cart by price in ascending order
+    else if order == "descending":
+        sort cart by price in descending order
+
+// Function to Clear the Cart
+function clearCart():
+    clear cart array
+    set totalPrice to 0
+    display message "Your cart is empty"

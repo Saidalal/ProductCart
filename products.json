@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Chandelier Earrings",
+        "image": "images/product1.jpg",
+        "price": 1050
+    },
+    {
+        "id": 2,
+        "name": "Hoop Earrings",
+        "image": "images/product2.jpg",
+        "price": 1050
+    },
+    {
+        "id": 3,
+        "name": "Stud Earrings",
+        "image": "images/product3.jpg",
+        "price": 2080
+    },
+    {
+        "id": 4,
+        "name": "Pearl Drop Earrings",
+        "image": "images/product4.jpg",
+        "price": 2005
+    }
+]
